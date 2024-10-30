@@ -1,0 +1,70 @@
+<main>
+    <h2>Élèves (2)</h2>
+    <a routerLink="add-student" 
+       style="text-decoration: none; color: black; position: absolute; top: 5rem; right: 3rem;">
+        <i class="fa-solid fa-circle-plus"></i> Nouveau élève
+    </a>
+    
+    <table id="table">
+        <thead>
+            <tr>
+                <th>Nom & Prénom</th>
+                <th>Genre</th>
+                <th>Classe</th>
+                <th>Matricule</th>
+                <th>Âge</th>
+                <th>Téléphone</th>
+                <th>Ville</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>KOFFI George</td>
+                <td>M</td>
+                <td>Tle</td>
+                <td>GJ/700DD</td>
+                <td>25</td>
+                <td>0123456789</td>
+                <td>Bonoua</td>
+                <td>
+                    <a routerLink="edit-student/1">
+                        <button type="button" style="background-color: orangered; color: black;">
+                            Modifier
+                        </button>
+                    </a>
+                    <button class="deleteButton" 
+                            style="background-color: red; color: black;" 
+                            (click)="confirm($event)">
+                        Supprimer
+                    </button>
+                </td>
+            </tr>
+            <tr>
+                <td>KONE Sali</td>
+                <td>F</td>
+                <td>2nd</td>
+                <td>GJ/700CD</td>
+                <td>22</td>
+                <td>0123456789</td>
+                <td>Abidjan</td>
+                <td>
+                    <a routerLink="edit-student/2">
+                        <button type="button" style="background-color: orangered; color: black;">
+                            Modifier
+                        </button>
+                    </a>
+                    <button class="deleteButton" 
+                            style="background-color: red; color: black;" 
+                            (click)="confirm($event)">
+                        Supprimer
+                    </button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+   
+</main>
+<p-toast position="top-right"></p-toast>
+<p-confirmPopup></p-confirmPopup>

@@ -1,0 +1,19 @@
+<main>
+    <h2 style="text-align: center;">Modifier l'utilisateur - 45678</h2>
+    <form [formGroup]="formUser">
+        <div>
+            <input type="text" placeholder="Pseudo" formControlName="pseudo">
+        </div>
+        <div>
+            <input type="password" placeholder="ancien mot de passe" formControlName="password">
+        </div>
+        <div>
+        <input type="password" placeholder="Nouveau mot de passe" formControlName="newPassword">
+        </div>
+        <div>
+        <input type="password" placeholder="Confirmer mot de passe" formControlName="confirmPassword">
+        </div>
+        <button type="button" (click)="annuler()">Annuler</button>
+        <button type="submit">Enregistrer</button>
+    </form>
+</main>

@@ -1,0 +1,44 @@
+<main>
+  <h2 style="text-align: center;">Ajouter utilisateur</h2>
+  <form [formGroup]="formUser">
+
+    <div>
+      <input type="text" [class.is-invalide]="isInvalidInput(formUser.controls['pseudo'])" placeholder="Pseudo"
+        formControlName="pseudo">
+    </div>
+    <span class="text-danger" *ngIf="isInvalidInput(formUser.controls['pseudo'])">
+      <ng-container *ngIf="formUser.controls['pseudo'].hasError('required')">
+        Ce champ est requis
+      </ng-container>
+      <ng-container *ngIf="formUser.controls['pseudo'].hasError('minlength')">
+        8 caratères minimuns
+      </ng-container>
+    </span>
+    <div>
+      <input type="password" placeholder="Mot de passe" formControlName="password">
+    </div>
+    <span class="text-danger" *ngIf="isInvalidInput(formUser.controls['password'])">
+      <ng-container *ngIf="formUser.controls['password'].hasError('required')">
+        Ce champ est requis
+      </ng-container>
+      <ng-container *ngIf="formUser.controls['password'].hasError('minlength')">
+        8 caratères minimuns
+      </ng-container>
+    </span>
+    <div>
+      <input type="password" placeholder="Confirmer mot de passe" formControlName="confirmPassword">
+    </div>
+    <span class="text-danger" *ngIf="isInvalidInput(formUser.controls['confirmPassword'])">
+      <ng-container *ngIf="formUser.controls['confirmPassword'].hasError('required')">
+        Ce champ est requis
+      </ng-container>
+      <ng-container *ngIf="formUser.controls['confirmPassword'].hasError('minlength')">
+        8 caratères minimuns
+      </ng-container>
+    </span>
+    <div>
+      <button type="button" (click)="annuler()">Annuler</button>
+      <button type="submit" (click)="onSaveData()" [disabled]="formUser.invalid">Enregistrer</button>
+    </div>
+  </form>
+</main>

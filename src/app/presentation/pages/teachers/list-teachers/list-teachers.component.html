@@ -1,0 +1,44 @@
+<main>
+    <h2>Professeurs (2)</h2>
+    <a routerLink="add-teachers" style=" text-decoration: none; color: black;position: absolute; top: 5rem; right: 3rem;">
+        <i class="fa-solid fa-circle-plus"></i>Nouveau professeur
+    </a>
+    <table id="table">
+        <thead>
+            <tr>
+                <th>Nom</th>
+                <th>Prénom</th>
+                <th>Matière</th>
+                <th>Vacant</th>
+                <th>Âge</th>
+                <th>Téléphone</th>
+                <th>Ville</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>KOUAKOU</td>
+                <td>Gregoire</td>
+                <td>Math</td>
+                <td>Non</td>
+                <td>40</td>
+                <td>0123456789</td>
+                <td>Touba</td>
+                <td><a routerLink="edit-teacher/1"><button type="button"  style="background-color: orangered; color: black;">Modifier</button></a> <button class="deleteButton" (click)="confirm($event)" style="background-color: red; color: black;">Supprimer</button></td>
+            </tr>
+            <tr>
+                <td>ATTA</td>
+                <td>Flora</td>
+                <td>Physique</td>
+                <td>Oui</td>
+                <td>37</td>
+                <td>0123456789</td>
+                <td>Bouké</td>
+                <td><a routerLink="edit-teacher/2"><button type="button" style="background-color: orangered; color: black;">Modifier</button></a> <button class="deleteButton" (click)="confirm($event)" style="background-color: red; color: black;">Supprimer</button></td>
+            </tr>
+        </tbody>
+    </table>
+</main>
+<p-toast position="top-right"></p-toast>
+<p-confirmPopup></p-confirmPopup>

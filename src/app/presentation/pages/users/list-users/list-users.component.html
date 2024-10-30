@@ -1,0 +1,22 @@
+<main>
+    <h2>Utilisateurs ({{userNumber}})</h2>
+    <a routerLink="add-users" style=" text-decoration: none; color: black;position: absolute; top: 5rem; right: 3rem;">
+        <i class="fa-solid fa-circle-plus"></i>Nouveau utilisateur
+    </a>
+    <table id="table">
+        <thead>
+            <tr>
+                <th>Pseudo</th>
+                <th>Date de création</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let user of users">
+                <td>{{user.pseudo}}</td>
+                <td>{{user.create_at}}</td>
+                <td><a routerLink="edit-user/1"><button style="background-color: orangered; color: black;">Modifier</button></a></td>
+            </tr>
+        </tbody>
+    </table>
+</main>
